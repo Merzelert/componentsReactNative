@@ -44,7 +44,7 @@ export const ModalScreen = () => {
                         }
                     }>
                         <Text style={{ fontSize: 20, fontWeight: 'bold', margin: 10 }}>Modal</Text>
-                        <Text style={{ fontSize: 16, fontWeight: '300', marginBottom: 20, marginHorizontal: 20 }}>
+                        <Text style={{ fontSize: 16, fontWeight: '300', marginBottom: 10, marginHorizontal: 20 }}>
                             Modal component is a simple way to present content above an enclosing view in a new "window" on top of the current screen.
                         </Text>
                         <Button
