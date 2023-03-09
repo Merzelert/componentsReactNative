@@ -1,9 +1,10 @@
 /* eslint-disable react/no-unstable-nested-components */
-import React from 'react';
+import React, { useContext } from 'react';
 import { SectionList, View, Text } from 'react-native';
 import { styles } from '../theme/appTheme';
 import { HeaderTitleList } from '../components/HeaderTitleList';
 import { ItemSeparator } from '../components/ItemSeparator';
+import { ThemeContext } from '../context/themeContext/ThemeContext';
 
 interface Casas {
     casa: string;
@@ -21,11 +22,14 @@ const casas: Casas[] = [
     },
     {
         casa: 'Anime',
-        data: ['Kenshin', 'Goku', 'Saitama', 'Vegeta', 'Naruto', 'Luffy', 'Ichigo', 'Sasuke', 'Sakura', 'Kakashi', 'Gon'],
+        data: ['Kenshin', 'Goku', 'Saitama', 'Vegeta', 'Naruto', 'Luffy', 'Ichigo', 'Sasuke', 'Sakura', 'Kakashi', 'Gon', 'Boruto', 'Eren', 'Mikasa', 'Ms. Santan', 'Dodorian', 'Ten Ten', 'Rock Lee'],
     },
 ];
 
 export const SectionListScreen = () => {
+
+    const { theme: { colors } } = useContext(ThemeContext);
+
     return (
         <View style={{ ...styles.globalMargin, flex: 1 }}>
             <SectionList
@@ -34,19 +38,19 @@ export const SectionListScreen = () => {
                 ListHeaderComponent={() => HeaderTitleList({ title: 'Section List' })}
                 ListFooterComponent={() => (
                     <View style={{ marginBottom: 70 }}>
-                        <HeaderTitleList title={'Total de casas: ' + casas.length} />
+                        <HeaderTitleList title={'Total Houses: ' + casas.length} />
                     </View>
                 )}
                 stickySectionHeadersEnabled={true}
-                renderItem={({ item }) => <Text style={{ fontSize: 20 }}>{item}</Text>}
+                renderItem={({ item }) => <Text style={{ fontSize: 20, color: colors.text }}>{item}</Text>}
                 renderSectionHeader={({ section }) => (
-                    <View style={{ backgroundColor: 'white' }}>
+                    <View style={{ backgroundColor: colors.background }}>
                         <HeaderTitleList title={section.casa} />
                     </View>
                 )}
                 renderSectionFooter={({ section }) => (
-                    <View style={{ backgroundColor: 'white', marginTop: 15 }}>
-                        <Text style={{ fontSize: 15 }}>
+                    <View style={{ backgroundColor: colors.background, marginTop: 15 }}>
+                        <Text style={{ fontSize: 15, color: colors.primary }}>
                             {`Total Items: ${section.data.length}`}
                         </Text >
                     </View>

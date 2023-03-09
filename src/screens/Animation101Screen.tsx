@@ -22,7 +22,7 @@ export const Animation101Screen = () => {
                 title="FadeIn"
                 onPress={() => {
                     fadeIn();
-                    startMovingPosition(-100, 300);
+                    startMovingPosition(-300, 300);
                 }
                 }
             />
@@ -45,5 +45,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#5856D6',
         width: 150,
         height: 150,
+        borderRadius: 10,
     },
 });

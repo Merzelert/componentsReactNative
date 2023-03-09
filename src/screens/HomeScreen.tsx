@@ -1,4 +1,3 @@
-/* eslint-disable react/no-unstable-nested-components */
 import React from 'react';
 // import Icon from 'react-native-vector-icons/Ionicons';
 import { View, FlatList } from 'react-native';
